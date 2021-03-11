@@ -1,0 +1,95 @@
+<div style="padding: 50px;" cdkDropListGroup>
+    <div class="example-container">
+        <h2>To do
+            <button mat-icon-button style="margin-right: 0;float: right;"> 
+                <mat-icon>delete</mat-icon>
+            </button>
+            <button mat-icon-button style="margin-right: 0;float: right;"> 
+                <mat-icon>edit</mat-icon>
+            </button>
+        </h2>
+        <div style="background-color: grey;" cdkDropList [cdkDropListData]="todo" class="example-list" (cdkDropListDropped)="drop($event)">
+            <!-- <mat-card (click)="openInput(item)" style="margin: 15px;" class="example-box  mat-elevation-z8" *ngFor="let item of todo" cdkDrag>
+                {{item}}
+            </mat-card> -->
+
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" style="margin: 15px;" class="mat-elevation-z8" *ngFor="let item of todo" cdkDrag>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{item}}
+                        </mat-panel-title>
+                        <section class="example-section">
+                            <mat-checkbox style="margin-right: 15px;" class="example-margin">Concluído</mat-checkbox>
+                        </section>
+                    </mat-expansion-panel-header>
+                    <p style="text-align: justify;">The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.</p>
+                    <button mat-icon-button style="margin-right: 0;color: grey;"> 
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-icon-button style="margin-right: 10px;color: grey;"> 
+                            <mat-icon>delete</mat-icon>
+                    </button>
+                    <mat-form-field appearance="fill" style="margin-right: 15px; float: right;">
+                        <mat-label>Responsável</mat-label>
+                        <mat-select>
+                            <mat-option value="option1">Marcos Paulo</mat-option>
+                            <mat-option value="option2">Vinicius Vovo</mat-option>
+                            <mat-option value="option3">Marcos Job</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+        <button (click)="addTask(1)" style="margin-top: 15px;background-color: grey;color: white;" mat-mini-fab aria-label="Example icon button with a menu icon">
+                    <mat-icon>add</mat-icon>
+            </button>
+    </div>
+    <div class="example-container">
+        <h2>Done
+            <button mat-icon-button style="margin-right: 0;float: right;"> 
+                <mat-icon>delete</mat-icon>
+            </button>
+            <button mat-icon-button style="margin-right: 0;float: right;"> 
+                <mat-icon>edit</mat-icon>
+            </button>
+        </h2>
+        <div style="background-color: grey;" cdkDropList [cdkDropListData]="done" class="example-list" (cdkDropListDropped)="drop($event)">
+            <!-- <mat-card (click)="openInput(item)" style="margin: 15px;" class="example-box  mat-elevation-z8" *ngFor="let item of done" cdkDrag>{{item}}</mat-card> -->
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" style="margin: 15px;" class="mat-elevation-z8" *ngFor="let item of done" cdkDrag>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{item}}
+                        </mat-panel-title>
+                        <section class="example-section">
+                            <mat-checkbox style="margin-right: 15px;" class="example-margin">Concluído</mat-checkbox>
+                        </section>
+                    </mat-expansion-panel-header>
+                    <p style="text-align: justify;">The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
+                        <br><a href="https://github.com/Marcospaulo-paixao">GitHub</a></p>
+                    <button mat-icon-button style="margin-right: 0;color: grey;"> 
+                            <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-icon-button style="margin-right: 10px;color: grey;"> 
+                            <mat-icon>delete</mat-icon>
+                    </button>
+                    <mat-form-field appearance="fill" style="margin-right: 15px; float: right;">
+                        <mat-label>Responsável</mat-label>
+                        <mat-select>
+                            <mat-option value="option1">Marcos Paulo</mat-option>
+                            <mat-option value="option2">Vinicius Vovo</mat-option>
+                            <mat-option value="option3">Marcos Job</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+        <button (click)="addTask(2)" style="margin-top: 15px;background-color: grey;color: white;" mat-mini-fab aria-label="Example icon button with a menu icon">
+            <mat-icon>add</mat-icon>
+        </button>
+    </div>
+    <button style="margin-top: 15px;background-color: black; color: white;" mat-mini-fab aria-label="Example icon button with a menu icon">
+        <mat-icon>add</mat-icon>
+    </button>
+</div>
